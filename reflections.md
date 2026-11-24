@@ -16,4 +16,4 @@
 ## Ideas for presentation
 
 - Themed as outer space
-- 
+- Human–AI co-creation metrics: See dedicated analysis in [collaboration_reflections.md](collaboration_reflections.md) detailing sprint velocity, prompt specificity, and modeling pivots.
