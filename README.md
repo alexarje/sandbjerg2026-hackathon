@@ -24,3 +24,22 @@ The statistics file uses participant identifiers as its `index`. The RMS measure
 ## Reuse
 
 The recording provenance, licence, and conditions for reuse are not specified in the supplied files. Check these with the data owner before sharing or reusing the material beyond the hackathon.
+
+## Applause Lab dashboard
+
+Open `index.html` through a local web server. The dashboard combines:
+
+- synchronized MP3 playback and timeline seeking
+- ensemble crowd-energy motion
+- participant search and selection
+- participant clapping statistics
+- stage-event markers
+- individual accelerometer traces
+
+Example launch commands on Windows PowerShell (run the server in one terminal):
+
+```powershell
+python -m http.server 8765
+```
+
+Then open `http://localhost:8765` in a browser.

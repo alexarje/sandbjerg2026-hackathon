@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sandbjerg Applause Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Sandbjerg 2026 Hackathon</p>
+        <h1>Applause Lab</h1>
+        <p class="subtitle">Explore the final clapping section across 77 accelerometers.</p>
+      </div>
+      <div class="status">
+        <span class="status-dot"></span>
+        <span id="loadStatus">Loading data</span>
+      </div>
+    </header>
+
+    <section class="metrics" aria-label="Dataset summary">
+      <article><span>Participants</span><strong id="participantCount">--</strong></article>
+      <article><span>Usable clappers</span><strong id="clapperCount">--</strong></article>
+      <article><span>Recording</span><strong id="duration">--</strong></article>
+      <article><span>Stage events</span><strong id="eventCount">--</strong></article>
+    </section>
+
+    <section class="audio-panel">
+      <audio id="audio" controls preload="metadata" src="final_clapping_section/final_clapping.mp3"></audio>
+      <div class="transport">
+        <span id="currentTime">00:00.0</span>
+        <input id="timeline" type="range" min="0" max="120" step="0.02" value="0" aria-label="Recording timeline">
+        <span id="totalTime">00:00.0</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card crowd-card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Collective motion</p>
+            <h2>Crowd energy</h2>
+          </div>
+          <div class="legend"><span class="legend-line"></span> ensemble RMS</div>
+        </div>
+        <canvas id="crowdChart" height="300"></canvas>
+        <div id="eventLabels" class="event-labels"></div>
+      </article>
+
+      <aside class="card participant-card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Accelerometer</p>
+            <h2>Participants</h2>
+          </div>
+          <button id="clearSelection" class="text-button" type="button">Show crowd</button>
+        </div>
+        <label class="search">
+          <span>Search participant ID</span>
+          <input id="participantSearch" type="search" placeholder="Type an ID or part of one">
+        </label>
+        <div id="participantList" class="participant-list"></div>
+      </aside>
+    </section>
+
+    <section class="grid lower">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Selected participant</p>
+            <h2 id="selectedTitle">Entire crowd</h2>
+          </div>
+        </div>
+        <canvas id="detailChart" height="260"></canvas>
+      </article>
+
+      <article class="card stats-card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Participant details</p>
+            <h2>Clapping stats</h2>
+          </div>
+        </div>
+        <dl id="statsList" class="stats-list">
+          <div><dt>Start</dt><dd>--</dd></div>
+          <div><dt>End</dt><dd>--</dd></div>
+          <div><dt>Duration</dt><dd>--</dd></div>
+          <div><dt>Median interval</dt><dd>--</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="card event-card">
+      <div class="card-head">
+        <div>
+          <p class="eyebrow">Concert timeline</p>
+          <h2>Stage events</h2>
+        </div>
+      </div>
+      <div id="eventTable" class="event-table"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
