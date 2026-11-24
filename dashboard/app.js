@@ -78,10 +78,10 @@ function parseStatsTime(value) {
 async function loadData() {
   try {
     const [motionText, peakText, statsText, eventText] = await Promise.all([
-      fetchText("final_clapping_section/final_section_motion.csv"),
-      fetchText("final_clapping_section/final_section_peaks.csv"),
-      fetchText("final_clapping_section/final_section_stats.csv"),
-      fetchText("final_clapping_section/final_stage_events.csv")
+      fetchText("../final_clapping_section/final_section_motion.csv"),
+      fetchText("../final_clapping_section/final_section_peaks.csv"),
+      fetchText("../final_clapping_section/final_section_stats.csv"),
+      fetchText("../final_clapping_section/final_stage_events.csv")
     ]);
 
     const motionRows = parseCsv(motionText);

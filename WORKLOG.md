@@ -23,3 +23,7 @@ At 17:34 CET, the first Pages deployment failed because the deployment job could
 At 17:37 CET, confirmed that the corrected deployment succeeded and the presentation URL returned HTTP 200. Prepared the Pages root to open the presentation, with Applause Lab at a separate path; verified the routing and both demo links in a local Pages copy. The routing change awaits a push.
 
 At 17:47 CET, confirmed that the Pages root redirect deployment succeeded. Added the team's reflection on setup time, a credited NASA crew image as a space-themed stand-in, and a one-minute spoken narrative. The browser reported a 60-second duration and played the narration in the local preview.
+
+At 17:57 CET, moved the Applause Lab files and the reflection notes into dedicated folders. Updated the Pages workflow and preserved the former dashboard address with a redirect. The local Pages preview loaded the dashboard data and audio after the move; the constellation parser tests passed.
+
+At 18:00 CET, added Alexander's context that the repository was assembled during a 2-hour hackathon at the RITMO, MMBB, and MIB retreat.

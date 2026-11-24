@@ -2,7 +2,7 @@
 
 This repository holds concert clapping data for the Sandbjerg hackathon. The README describes the files and timing caveats; the original description remains beside the data.
 
-Applause Constellation is a Vite application for viewing the peak data and listening to a sonification alongside the concert recording. The README gives the setup and mapping. Its source is in `constellation/`. The separate Applause Lab dashboard is at the repository root.
+Applause Constellation is a Vite application for viewing the peak data and listening to a sonification alongside the concert recording. The README gives the setup and mapping. Its source is in `constellation/`. The separate Applause Lab dashboard is in `dashboard/`, and the team's notes are in `reflections/`.
 
 The reveal.js presentation is in `presentation/`. Its summary slide includes a one-minute narration; the script and regeneration instructions are in the presentation folder. GitHub Pages is configured for Actions, and the repository workflow prepares the deck and both dashboards when changes are pushed to `main`. The Pages root opens the deck.
 

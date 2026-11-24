@@ -2,9 +2,21 @@
 
 This repository contains accelerometer data, audio, and stage-event annotations for the final clapping section of the MusicLab Copenhagen concert experiment. It is shared for the Sandbjerg hackathon.
 
+> This repository was assembled during a 2-hour hackathon at a retreat between RITMO, MMBB, and MIB. The tools and analyses are exploratory and should be checked before reuse. The underlying data come from an existing dataset.
+
+## Repository
+
+- [presentation/](presentation/): reveal.js slides, spoken narrative, and presentation assets.
+- [dashboard/](dashboard/): Applause Lab, an interactive view of the motion data and stage events.
+- [constellation/](constellation/): Applause Constellation, an interactive score and sonification.
+- [final_clapping_section/](final_clapping_section/): the supplied data and descriptive analysis.
+- [reflections/](reflections/): the team's notes and the collaboration analysis.
+
+The root also holds the project handover, open work, and work log, together with the npm and Vite configuration used to build the constellation and the Pages site.
+
 ## Presentation
 
-[Applause, in orbit](presentation/) is The Applonauts' reveal.js presentation about the data, workflow, and interactive visualisations. The GitHub Actions workflow builds the constellation and publishes the presentation and dashboards to GitHub Pages when changes are pushed to `main`. The Pages root is configured to open the presentation, with Applause Lab at `/dashboard.html`.
+[Applause, in orbit](presentation/) is The Applonauts' reveal.js presentation about the data, workflow, and interactive visualisations. The GitHub Actions workflow builds the constellation and publishes the presentation and dashboards to GitHub Pages when changes are pushed to `main`. The Pages root opens the presentation, with Applause Lab at `/dashboard/`; the earlier `/dashboard.html` address redirects there.
 
 ## Applause Constellation
 
@@ -55,7 +67,7 @@ Upham, F. (2026). *Clapping data, MusicLab Copenhagen* [Dataset]. Zenodo. https:
 
 ## Applause Lab dashboard
 
-Open `index.html` through a local web server. The dashboard combines:
+Open `dashboard/` through a local web server. The dashboard combines:
 
 - synchronized MP3 playback and timeline seeking
 - ensemble crowd-energy motion
@@ -64,10 +76,11 @@ Open `index.html` through a local web server. The dashboard combines:
 - stage-event markers
 - individual accelerometer traces
 
-Example launch commands on Windows PowerShell (run the server in one terminal):
+For example, create a local Python environment and serve the repository root:
 
-```powershell
-python -m http.server 8765
+```sh
+python3 -m venv .venv
+.venv/bin/python -m http.server 8765
 ```
 
-Then open `http://localhost:8765` in a browser.
+Then open `http://localhost:8765/dashboard/` in a browser. On Windows, use `.venv\Scripts\python` instead of `.venv/bin/python`.

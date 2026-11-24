@@ -1,3 +1,3 @@
 # Open work
 
-- [ME] Check the narration and updated slides on GitHub Pages after deployment.
+- [ME] Check the dashboard and its legacy redirect on GitHub Pages after the reorganisation is pushed.

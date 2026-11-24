@@ -4,7 +4,7 @@ A reveal.js presentation for the Sandbjerg hackathon. Serve the repository root 
 
 The summary slide includes a one-minute spoken version of [the narrative](narrative.md). It uses the Microsoft `en-GB-SoniaNeural` voice. To regenerate it, install `tools/requirements.txt` in the project `.venv` and run `bash presentation/tools/generate-narration.sh` from the repository root. Speech synthesis sends the narrative text to Microsoft's online service; FFmpeg adjusts the result to one minute.
 
-The two demonstrations are linked from the deployed deck. Applause Lab is at `/dashboard.html` on the Pages site and at the repository root when served locally. Applause Constellation is built for the Pages site by the workflow; its local development server is described in the repository README.
+The two demonstrations are linked from the deployed deck. Applause Lab is at `/dashboard/` both on the Pages site and when the repository root is served locally. Applause Constellation is built for the Pages site by the workflow; its local development server is described in the repository README.
 
 The data come from Upham, F. (2026), *Clapping data, MusicLab Copenhagen*, [Zenodo](https://doi.org/10.5281/zenodo.24482561), CC BY 4.0. The number of participant columns and selected peaks is checked by the project's parser test.
 
