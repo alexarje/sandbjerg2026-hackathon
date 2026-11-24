@@ -35,6 +35,12 @@ Rscript final_clapping_section/analysis/visualize.R
 
 The HTML report is [analysis/report.html](final_clapping_section/analysis/report.html). It is descriptive: participant-level sensor summaries should not be interpreted as audience-wide estimates or calibrated force/loudness.
 
+## Motion over time
+
+Run `python final_clapping_section/plot_final_clapping_motion.py` to generate [final_clapping_motion_stage_events.png](final_clapping_section/final_clapping_motion_stage_events.png). The chart shows the per-second median of participant motion, the 25th–75th percentile range, and the number of participants with data. Dashed lines and labels mark the stage events.
+
+The motion values are normalized dataset units, not physical acceleration units. Stage-event timing and participant alignment have the uncertainty noted below.
+
 ## Timing and interpretation
 
 The accelerometer data were resampled at 50 Hz. The supplied notes describe the section as extended by 7 seconds at each end. Alignment between participants is estimated to be accurate to around 100 ms on average, or 5 samples.
