@@ -2,6 +2,10 @@
 
 This repository contains accelerometer data, audio, and stage-event annotations for the final clapping section of the MusicLab Copenhagen concert experiment. It is shared for the Sandbjerg hackathon.
 
+## Presentation
+
+[Applause, in orbit](presentation/) is The Applonauts' reveal.js presentation about the data, workflow, and interactive visualisations. The GitHub Actions workflow builds the constellation and publishes the presentation and dashboards to GitHub Pages when changes are pushed to `main`. The presentation will be available at `https://alexarje.github.io/sandbjerg2026-hackathon/presentation/` after a successful deployment.
+
 ## Applause Constellation
 
 Run the interactive visualisation locally with Node.js and npm:

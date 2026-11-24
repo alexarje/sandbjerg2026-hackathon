@@ -13,3 +13,7 @@ Alexander identified the Zenodo source and its CC BY 4.0 licence. Checked the re
 At 17:09 CET, fast-forwarded the local branch to the upstream plot commit, preserving the uncommitted reflections. Built Applause Constellation with score and circular views, peak sonification, the concert recording, and stage-event seeking. Checked the data parser against the supplied CSVs, built the application, and exercised playback and controls in desktop and mobile browser views.
 
 During the subsequent rebase, the upstream branch added a separate dashboard at the root. Kept that dashboard and moved Applause Constellation into its own directory.
+
+At 17:28 CET, prepared a space-themed reveal.js presentation about the data, workflow, prototypes, and reflections. Alexander enabled GitHub Pages for Actions. Added a workflow to publish the deck and dashboards, and checked a locally assembled Pages copy, slide layout, speaker notes, links, and parser tests. The workflow has not yet been pushed or deployed.
+
+Added the group's chosen name, The Applonauts, and a one-slide summary of the project.

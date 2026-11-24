@@ -1,3 +1,3 @@
 # Open work
 
-No open items.
+- [ME] Check the GitHub Pages deployment after the presentation is pushed.

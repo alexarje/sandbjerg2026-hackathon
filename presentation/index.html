@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applause, in orbit | Sandbjerg hackathon</title>
+  <link rel="stylesheet" href="lib/reveal/reset.css">
+  <link rel="stylesheet" href="lib/reveal/reveal.css">
+  <link rel="stylesheet" href="lib/reveal/theme/white.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="cover" data-background-color="#101c22" data-background-image="images/hubble-xdf.jpg" data-background-size="cover" data-background-opacity="0.68">
+  <div class="cover-heading"><h1>Applause,<br><em>in orbit.</em></h1><p>Listening to a room, one rhythm at a time.</p></div>
+  <div class="cover-bottom">THE APPLONAUTS <span>✳</span> SANDBJERG HACKATHON</div>
+  <aside class="notes">The project explores the final applause at MusicLab Copenhagen through motion, sound, and visualisation. The cover image is the Hubble eXtreme Deep Field, credited in the presentation README. The image is a metaphor, not a view of the concert data.</aside>
+</section>
+
+<section class="statement" data-background-color="#101c22">
+  <div class="eyebrow">A QUESTION FOR THE ROOM</div>
+  <h2>What happens when<br>an audience <em>claps together?</em></h2>
+  <p>One room. Many individual rhythms.</p>
+  <aside class="notes">The starting point is collective applause. The question is how the activity of individuals relates to the sound and overall motion of the room. The visualisations are exploratory and do not by themselves establish synchronisation or causality.</aside>
+</section>
+
+<section>
+  <section class="chapter mint" data-background-color="#b9ead7">
+    <span class="chapter-number">01</span><h2>The signal</h2><p>A concert becomes a dataset.</p>
+    <aside class="notes">The data are from Finn Upham's Clapping data, MusicLab Copenhagen, version 2 on Zenodo. The recording covers the concert's final applause.</aside>
+  </section>
+  <section class="content light" data-background-color="#f3f5ec">
+    <div class="eyebrow">THE DATA</div><h2>A room, sampled.</h2>
+    <div class="numbers"><div><strong>77</strong><span>participant columns</span></div><div><strong>50</strong><span>samples per second</span></div><div><strong>14,690</strong><span>selected motion peaks</span></div></div>
+    <aside class="notes">The peak CSV contains 77 participant columns and 14,690 populated peak cells, verified by the project's parser test. The supplied notes state that accelerometer data were resampled at 50 Hz. The counts describe the file, not necessarily the number of people clapping throughout.</aside>
+  </section>
+  <section class="content light" data-background-color="#f3f5ec">
+    <div class="eyebrow">ONE SHARED TIMELINE</div><h2>Motion. Sound. Stage.</h2>
+    <p class="lead">Three ways into the same applause.</p>
+    <div class="signal-line"><span>ACCELEROMETERS</span><i></i><span>HALL RECORDING</span><i></i><span>STAGE EVENTS</span></div>
+    <aside class="notes">The files include motion traces, selected peaks, stereo audio, and stage-event annotations. The audio also includes claps from audience members who were not participants. Participant alignment is estimated at approximately 100 ms on average, while event timing is within half a second according to the supplied notes.</aside>
+  </section>
+</section>
+
+<section>
+  <section class="chapter coral" data-background-color="#f1ac9c">
+    <span class="chapter-number">02</span><h2>The workflow</h2><p>From shared data to shared work.</p>
+    <aside class="notes">The project assembled and documented an existing dataset, explored it with figures and interactive views, and prepared the outputs for sharing. These are parts of an iterative workflow rather than a strict sequence.</aside>
+  </section>
+  <section class="content light" data-background-color="#f3f5ec">
+    <div class="eyebrow">THE MISSION PATH</div><h2>One dataset. Many routes.</h2>
+    <div class="workflow">
+      <div><i data-lucide="database"></i><strong>Data</strong><span>Zenodo</span></div>
+      <div><i data-lucide="file-search"></i><strong>Understand</strong><span>Files and timing</span></div>
+      <div><i data-lucide="chart-no-axes-combined"></i><strong>Explore</strong><span>Plots and models</span></div>
+      <div><i data-lucide="audio-lines"></i><strong>Create</strong><span>Interactive views</span></div>
+      <div><i data-lucide="share-2"></i><strong>Share</strong><span>GitHub and Pages</span></div>
+    </div>
+    <aside class="notes">The flow is a summary of the work, not a claim that every participant followed the same order. The Zenodo dataset provides the files; the repository records the descriptions, plots, two browser-based explorations, and presentation. GitHub Pages is prepared through an Actions workflow.</aside>
+  </section>
+  <section class="statement" data-background-color="#101c22">
+    <div class="eyebrow">THE WORKBENCH</div><h2>One editor.<br><em>Many experiments.</em></h2>
+    <p>VS Code and Copilot as the shared workspace.</p>
+    <aside class="notes">The team's reflections say that they worked in VS Code with Copilot. AI assistance suggested ideas and helped produce code and documentation. The team remains responsible for checking the output, interpreting the data, and deciding what to share.</aside>
+  </section>
+  <section class="content light" data-background-color="#f3f5ec">
+    <div class="eyebrow">WORKING IN PARALLEL</div><h2>Fast work needs<br><em>shared context.</em></h2>
+    <p class="lead">Different systems, concurrent edits, and Git conflicts.</p>
+    <aside class="notes">The team's reflections mention setup across operating systems, parallel programming environments, Git conflicts, and difficulty keeping track of rapid progress. The two dashboards were developed independently and preserved during a rebase. These are observations from this hackathon, not measured outcomes.</aside>
+  </section>
+</section>
+
+<section>
+  <section class="chapter blue" data-background-color="#a9d4df">
+    <span class="chapter-number">03</span><h2>Mapping the room</h2><p>From motion to patterns.</p>
+    <aside class="notes">The hackathon produced visualisations at different scales, from aggregate motion to individual participants and event markers.</aside>
+  </section>
+  <section class="figure-slide light" data-background-color="#f3f5ec">
+    <h2>When the stage moves,<br>what does the room do?</h2>
+    <img src="../final_clapping_section/motion_stage_events_timeseries.png" alt="Audience motion time series aligned with stage-event annotations">
+    <aside class="notes">This project figure aligns audience motion with annotated stage events. It invites comparison but does not demonstrate that the events caused a change in audience motion. Use the stage labels and the original data when interpreting the plot.</aside>
+  </section>
+  <section class="figure-slide light" data-background-color="#f3f5ec">
+    <h2>A trajectory through applause.</h2>
+    <img src="../final_clapping_section/gamm_motion_predictions.png" alt="Population-average motion trajectory with a confidence interval and stage-event markers">
+    <aside class="notes">The project includes this population-average trajectory figure labelled as a generalised additive mixed model, with a 95% confidence interval. The figure is exploratory; the modelling code and assumptions are not documented in this repository, so it should not be presented as a verified causal result.</aside>
+  </section>
+</section>
+
+<section>
+  <section class="chapter yellow" data-background-color="#f4df9c">
+    <span class="chapter-number">04</span><h2>Hear the constellation</h2><p>Give every peak a voice.</p>
+    <aside class="notes">Applause Constellation maps selected motion peaks into a score and synthetic sounds. It is an interpretation of the dataset, not a reconstruction of individual acoustic claps.</aside>
+  </section>
+  <section class="statement" data-background-color="#101c22">
+    <div class="eyebrow">APPLAUSE CONSTELLATION</div><h2>Each peak becomes<br><em>a note.</em></h2>
+    <p>Identity maps to pitch and stereo position.<br>Peak height maps to loudness.</p>
+    <a class="demo-link" href="../constellation/" target="_blank" rel="noopener">Open Applause Constellation ↗</a>
+    <aside class="notes">The mapping assigns each participant a stable pitch and stereo position. Peak height controls the note amplitude, scaled against the 95th percentile and capped. Circle positions are a visual arrangement, not the participants' physical locations. Demonstrate the score, constellation, and separate audio controls.</aside>
+  </section>
+  <section class="statement" data-background-color="#101c22">
+    <div class="eyebrow">THE ORIGINAL RECORDING</div><h2>Listen to<br><em>the room itself.</em></h2>
+    <audio controls preload="none" src="../final_clapping_section/final_clapping.mp3">Audio playback is not supported in this browser.</audio>
+    <aside class="notes">Play an excerpt from the concert-hall recording. The sound includes audience members who were not participants in the accelerometer measurements. Compare the recording with the sonification without treating the synthetic tones as individual recorded claps.</aside>
+  </section>
+  <section class="content light" data-background-color="#f3f5ec">
+    <div class="eyebrow">EXPLORE THE DATA</div><h2>From the crowd<br>to an individual.</h2>
+    <p class="lead">A second view brings the motion traces, statistics, and stage events together.</p>
+    <a class="demo-link dark-link" href="../" target="_blank" rel="noopener">Open Applause Lab ↗</a>
+    <aside class="notes">The separate Applause Lab dashboard provides participant search, individual motion traces, clapping statistics, and an ensemble view aligned with the stage events. It is a complementary project dashboard.</aside>
+  </section>
+</section>
+
+<section class="content light" data-background-color="#f3f5ec">
+  <div class="eyebrow">THE MISSION IN ONE SLIDE</div>
+  <h2>One room. Many ways to listen.</h2>
+  <div class="workflow" style="grid-template-columns:repeat(4,1fr)">
+    <div><i data-lucide="database"></i><strong>Data</strong><span>Motion, audio, and stage events</span></div>
+    <div><i data-lucide="workflow"></i><strong>Workflow</strong><span>Inspect, prototype, and share</span></div>
+    <div><i data-lucide="audio-lines"></i><strong>Outputs</strong><span>Figures, dashboards, and sonification</span></div>
+    <div><i data-lucide="users-round"></i><strong>Learning</strong><span>Parallel work needs shared context</span></div>
+  </div>
+  <aside class="notes">The project began with the MusicLab Copenhagen clapping dataset on Zenodo. The team explored and documented the files in VS Code with Copilot, created plots and two interactive views, and prepared them for sharing. Reflections emphasised the speed of the work, setup across systems, and the need to keep track of parallel changes. The visualisations are exploratory and do not establish causal relationships.</aside>
+</section>
+
+<section class="cover closing" data-background-color="#101c22" data-background-image="images/hubble-xdf.jpg" data-background-size="cover" data-background-opacity="0.55">
+  <h2>A room is never<br><em>just one rhythm.</em></h2>
+  <p>Thank you.</p>
+  <aside class="notes">The presentation was drafted with AI assistance using the project files. The team is responsible for checking and presenting the work. Data: Upham, F. (2026), Clapping data, MusicLab Copenhagen, https://doi.org/10.5281/zenodo.24482561, CC BY 4.0. Image credit is in the presentation README.</aside>
+</section>
+
+</div>
+</div>
+<script src="lib/reveal/reveal.js"></script>
+<script src="lib/reveal-plugin/notes/notes.js"></script>
+<script src="lib/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+  Reveal.initialize({ width: 1920, height: 1080, margin: 0.06, hash: true, center: false, slideNumber: false, transition: 'fade', backgroundTransition: 'fade', plugins: [RevealNotes] });
+</script>
+</body>
+</html>
