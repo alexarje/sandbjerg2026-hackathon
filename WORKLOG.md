@@ -17,3 +17,5 @@ During the subsequent rebase, the upstream branch added a separate dashboard at 
 At 17:28 CET, prepared a space-themed reveal.js presentation about the data, workflow, prototypes, and reflections. Alexander enabled GitHub Pages for Actions. Added a workflow to publish the deck and dashboards, and checked a locally assembled Pages copy, slide layout, speaker notes, links, and parser tests. The workflow has not yet been pushed or deployed.
 
 Added the group's chosen name, The Applonauts, and a one-slide summary of the project.
+
+At 17:34 CET, the first Pages deployment failed because the deployment job could not find the uploaded artifact. Separated the build and deployment jobs so deployment waits for the build to complete.
