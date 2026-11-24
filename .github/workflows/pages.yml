@@ -28,7 +28,9 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/constellation
-          cp index.html app.js styles.css _site/
+          cp presentation/redirect.html _site/index.html
+          cp index.html _site/dashboard.html
+          cp app.js styles.css _site/
           cp -R presentation final_clapping_section _site/
           cp -R dist/. _site/constellation/
       - uses: actions/configure-pages@v5

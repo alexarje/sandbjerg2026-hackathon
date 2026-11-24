@@ -2,7 +2,7 @@
 
 A reveal.js presentation for the Sandbjerg hackathon. Serve the repository root with a local web server and open `/presentation/`. The speaker notes contain context, data limitations, and source details. Press `S` to open them.
 
-The two demonstrations are linked from the deck. Applause Lab runs from the repository root. Applause Constellation is built for the GitHub Pages site by the Pages workflow; its local development server is described in the repository README.
+The two demonstrations are linked from the deployed deck. Applause Lab is at `/dashboard.html` on the Pages site and at the repository root when served locally. Applause Constellation is built for the Pages site by the workflow; its local development server is described in the repository README.
 
 The data come from Upham, F. (2026), *Clapping data, MusicLab Copenhagen*, [Zenodo](https://doi.org/10.5281/zenodo.24482561), CC BY 4.0. The number of participant columns and selected peaks is checked by the project's parser test.
 

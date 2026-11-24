@@ -4,7 +4,7 @@ This repository contains accelerometer data, audio, and stage-event annotations 
 
 ## Presentation
 
-[Applause, in orbit](presentation/) is The Applonauts' reveal.js presentation about the data, workflow, and interactive visualisations. The GitHub Actions workflow builds the constellation and publishes the presentation and dashboards to GitHub Pages when changes are pushed to `main`. The presentation will be available at `https://alexarje.github.io/sandbjerg2026-hackathon/presentation/` after a successful deployment.
+[Applause, in orbit](presentation/) is The Applonauts' reveal.js presentation about the data, workflow, and interactive visualisations. The GitHub Actions workflow builds the constellation and publishes the presentation and dashboards to GitHub Pages when changes are pushed to `main`. The Pages root is configured to open the presentation, with Applause Lab at `/dashboard.html`.
 
 ## Applause Constellation
 
