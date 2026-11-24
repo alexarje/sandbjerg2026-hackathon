@@ -1,6 +1,6 @@
 # Sandbjerg hackathon data
 
-This repository contains accelerometer data, audio, and stage-event annotations for the final clapping section of a concert. It is shared for the Sandbjerg hackathon.
+This repository contains accelerometer data, audio, and stage-event annotations for the final clapping section of the MusicLab Copenhagen concert experiment. It is shared for the Sandbjerg hackathon.
 
 ## Files
 
@@ -23,4 +23,6 @@ The statistics file uses participant identifiers as its `index`. The RMS measure
 
 ## Reuse
 
-The recording provenance, licence, and conditions for reuse are not specified in the supplied files. Check these with the data owner before sharing or reusing the material beyond the hackathon.
+The data come from the Zenodo record below and are licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/). Please attribute the dataset when reusing it.
+
+Upham, F. (2026). *Clapping data, MusicLab Copenhagen* [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.24482561
