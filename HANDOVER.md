@@ -4,6 +4,6 @@ This repository holds concert clapping data for the Sandbjerg hackathon. The REA
 
 Applause Constellation is a Vite application for viewing the peak data and listening to a sonification alongside the concert recording. The README gives the setup and mapping. Its source is in `constellation/`. The separate Applause Lab dashboard is at the repository root.
 
-The reveal.js presentation is in `presentation/`. GitHub Pages is configured for Actions, and the repository workflow prepares the deck and both dashboards when changes are pushed to `main`. The Pages root is configured to open the deck.
+The reveal.js presentation is in `presentation/`. Its summary slide includes a one-minute narration; the script and regeneration instructions are in the presentation folder. GitHub Pages is configured for Actions, and the repository workflow prepares the deck and both dashboards when changes are pushed to `main`. The Pages root opens the deck.
 
 The data come from Finn Upham's [Clapping data, MusicLab Copenhagen](https://doi.org/10.5281/zenodo.24482561), licensed under CC BY 4.0. The README gives the citation.

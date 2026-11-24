@@ -21,3 +21,5 @@ Added the group's chosen name, The Applonauts, and a one-slide summary of the pr
 At 17:34 CET, the first Pages deployment failed because the deployment job could not find the uploaded artifact. Separated the build and deployment jobs so deployment waits for the build to complete.
 
 At 17:37 CET, confirmed that the corrected deployment succeeded and the presentation URL returned HTTP 200. Prepared the Pages root to open the presentation, with Applause Lab at a separate path; verified the routing and both demo links in a local Pages copy. The routing change awaits a push.
+
+At 17:47 CET, confirmed that the Pages root redirect deployment succeeded. Added the team's reflection on setup time, a credited NASA crew image as a space-themed stand-in, and a one-minute spoken narrative. The browser reported a 60-second duration and played the narration in the local preview.

@@ -1,3 +1,3 @@
 # Open work
 
-- [ME] Check the deployed Pages root redirect after the workflow finishes.
+- [ME] Check the narration and updated slides on GitHub Pages after deployment.
