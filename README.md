@@ -2,6 +2,19 @@
 
 This repository contains accelerometer data, audio, and stage-event annotations for the final clapping section of the MusicLab Copenhagen concert experiment. It is shared for the Sandbjerg hackathon.
 
+## Applause Constellation
+
+Run the interactive visualisation locally with Node.js and npm:
+
+```sh
+npm install
+npm run dev
+```
+
+Open the address printed by Vite. The score shows each participant in a row; the constellation arranges participants in a circle, not at their physical locations. Each selected peak triggers a short tone. Participant identity determines pitch and stereo position, while peak height controls volume. Peak heights are scaled against the 95th percentile and capped. The participant count covers peaks in the preceding second. The concert recording and the sonification can be mixed independently; stage-event markers seek to their annotated times.
+
+Run `npm test` for the data parser checks and `npm run build` for a production build.
+
 ## Files
 
 All data are in [final_clapping_section](final_clapping_section/). The original descriptions are in [ReadMe.txt](final_clapping_section/ReadMe.txt).

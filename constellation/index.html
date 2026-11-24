@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f2">
+    <title>Applause Constellation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="."><span class="brand-mark">✳</span><span>THE LISTENING LAB <span class="brand-separator">/</span> MUSICLAB COPENHAGEN</span></a>
+      <a class="source-link" href="https://doi.org/10.5281/zenodo.24482561" target="_blank" rel="noreferrer">Source dataset <i data-lucide="arrow-up-right"></i></a>
+    </header>
+    <main>
+      <section class="heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> AN INTERACTIVE LISTENING EXPERIENCE</div>
+          <h1>Applause <span>Constellation<span class="title-period">.</span></span></h1>
+          <p class="subtitle">A room of individual rhythms, together.</p>
+        </div>
+        <div class="heading-meta"><span>AN EXPERIMENT IN</span><strong>Collective rhythm</strong><span>MUSICLAB COPENHAGEN</span></div>
+      </section>
+      <section class="workspace" aria-label="Applause visualisation">
+        <div class="visual-column">
+          <div class="visual-header">
+            <div><div class="section-kicker">THE PERFORMANCE <span>/</span> <span id="view-kicker">SCORE</span></div><h2 id="view-title">A room in rhythm</h2></div>
+            <div class="view-switch" role="group" aria-label="Visualisation view">
+              <button class="view-button active" data-view="score" aria-pressed="true"><i data-lucide="rows-3"></i><span>Score</span></button>
+              <button class="view-button" data-view="constellation" aria-pressed="false"><i data-lucide="orbit"></i><span>Constellation</span></button>
+            </div>
+          </div>
+          <div class="canvas-wrap" id="canvas-wrap">
+            <div class="canvas-caption"><span id="canvas-label">PARTICIPANTS <span class="caption-arrow">↓</span></span><span id="canvas-status">LOADING DATA</span></div>
+            <canvas id="visualisation" aria-label="Applause score showing selected clap peaks over time"></canvas>
+            <div class="canvas-footer"><span id="canvas-left">EACH ROW IS A PARTICIPANT</span><span id="canvas-right">TIME <span class="caption-arrow">→</span></span></div>
+            <div id="loading" class="loading">Preparing the score...</div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-top"><span>PLAYBACK</span><span id="clock">00:00 <span>/</span> 00:00</span></div>
+            <input id="seek" type="range" min="0" max="121" value="0" step="0.01" aria-label="Playback position">
+            <div class="timeline-bottom"><span>00:00</span><span id="duration-label">02:01</span></div>
+            <div id="event-markers" class="event-markers" aria-label="Stage events"></div>
+          </div>
+          <div class="transport">
+            <button id="play" class="play-button" aria-label="Play" disabled><i data-lucide="play" fill="currentColor"></i></button>
+            <div class="transport-copy"><strong id="play-title">Press play to listen</strong><span id="play-subtitle">The room is ready.</span></div>
+            <button id="restart" class="icon-button" title="Restart" aria-label="Restart"><i data-lucide="rotate-ccw"></i></button>
+            <button id="loop" class="icon-button" title="Loop playback" aria-label="Loop playback" aria-pressed="false"><i data-lucide="repeat-2"></i></button>
+          </div>
+        </div>
+        <aside class="side-panel">
+          <div class="panel-intro"><span class="panel-number">01 / THE MIX</span><i data-lucide="audio-lines"></i></div>
+          <h2>Listen closer<span class="title-period">.</span></h2>
+          <p class="panel-description">Two ways to hear the same moment.</p>
+          <div class="mix-control">
+            <div class="mix-heading"><div class="mix-icon coral"><i data-lucide="sparkles"></i></div><div><strong>Sonification</strong><span>Selected motion peaks</span></div><label class="switch"><input id="synth-enabled" type="checkbox" checked aria-label="Enable sonification"><span></span></label></div>
+            <div class="range-row"><i data-lucide="volume-1"></i><input id="synth-volume" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="Sonification volume"><i data-lucide="volume-2"></i></div>
+          </div>
+          <div class="mix-control">
+            <div class="mix-heading"><div class="mix-icon teal"><i data-lucide="mic-2"></i></div><div><strong>Concert recording</strong><span>Sound from the hall</span></div><label class="switch"><input id="recording-enabled" type="checkbox" aria-label="Enable concert recording"><span></span></label></div>
+            <div class="range-row"><i data-lucide="volume-1"></i><input id="recording-volume" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Concert recording volume"><i data-lucide="volume-2"></i></div>
+          </div>
+          <div class="panel-divider"></div>
+          <div class="live-header"><span>IN THIS MOMENT</span><span class="live-indicator"><span></span> LIVE</span></div>
+          <div class="live-stat"><strong id="active-count">0</strong><span>participants with a peak<br>in the last second</span><div class="live-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="event-now"><span>ON STAGE</span><strong id="current-event">Waiting for the performance</strong></div>
+          <div class="panel-note"><i data-lucide="info"></i><span>Participant alignment is approximate (100 ms on average). Stage events are accurate to within 0.5 seconds.</span></div>
+        </aside>
+      </section>
+      <section class="bottom-strip"><div><span class="strip-dot"></span><strong>One room, many rhythms.</strong><span> Each mark is a selected motion peak.</span></div><div class="dataset-meta"><span id="participant-count">— PARTICIPANTS</span><span id="peak-count">— SELECTED PEAKS</span><span>CC BY 4.0</span></div></section>
+      <footer><span>MUSICLAB COPENHAGEN <span class="footer-slash">/</span> SANDBJERG HACKATHON</span><a href="https://doi.org/10.5281/zenodo.24482561" target="_blank" rel="noreferrer">DATA BY FINN UPHAM <i data-lucide="arrow-up-right"></i></a></footer>
+    </main>
+    <audio id="recording" preload="auto" src="./final_clapping.mp3"></audio>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
