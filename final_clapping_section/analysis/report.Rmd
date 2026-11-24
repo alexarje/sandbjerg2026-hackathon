@@ -1,0 +1,79 @@
+---
+title: "Final Clapping Section: Visual Summary"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(knitr)
+analysis_dir <- "."
+metrics <- read_csv(file.path(analysis_dir, "summary_statistics.csv"), show_col_types = FALSE)
+participants <- read_csv(file.path(analysis_dir, "participant_statistics.csv"), show_col_types = FALSE)
+events <- read_csv("../final_stage_events.csv", show_col_types = FALSE)
+active_n <- sum(!is.na(participants$duration))
+sensor_n <- nrow(participants)
+dur <- participants$duration[!is.na(participants$duration)]
+ici <- participants$median_interclap_interval[!is.na(participants$median_interclap_interval)]
+```
+
+## Data at a glance
+
+The motion files contain 50 Hz accelerometer-derived signals for `r sensor_n` participant sensors. `r active_n` participants have defined start/end times and durations in the supplied statistics table. The remaining `r sensor_n - active_n` participants have no defined clapping interval and are not included in timing summaries.
+
+The supplied notes describe sensor time alignment as accurate to approximately 100 ms on average, and stage-event times as accurate to within about half a second. Treat short timing differences cautiously.
+
+## Timeline and ensemble activity
+
+The heatmap shows the trimmed motion series, with participants ordered by their detected clapping start time. Red vertical lines mark stage events. A missing/blank region means no retained observation, not zero motion.
+
+```{r}
+knitr::include_graphics(file.path(analysis_dir, "figure_participant_timeline.png"))
+```
+
+The line below summarizes the median normalized motion across participants at each time point; the shaded band is the interquartile range. These are descriptive summaries, not confidence intervals.
+
+```{r}
+knitr::include_graphics(file.path(analysis_dir, "figure_ensemble_activity.png"))
+```
+
+## Participant timing statistics
+
+```{r}
+kable(metrics %>% mutate(across(where(is.numeric), ~round(.x, 2))),
+      caption = "Descriptive statistics for supplied participant-level measures")
+```
+
+Among participants with defined durations, the median duration was **`r round(median(dur), 1)` seconds** (IQR `r round(quantile(dur, .25), 1)`–`r round(quantile(dur, .75), 1)`). The median of participant median interclap intervals was **`r round(median(ici), 2)` seconds**, equivalent to approximately **`r round(60 / median(ici))` claps per minute**. This rate is a reciprocal transformation of the median interval; it is not the average applause rate of the whole crowd.
+
+```{r}
+knitr::include_graphics(file.path(analysis_dir, "figure_duration_distribution.png"))
+knitr::include_graphics(file.path(analysis_dir, "figure_interclap_intervals.png"))
+```
+
+## Exploratory relation between interval and motion
+
+```{r}
+knitr::include_graphics(file.path(analysis_dir, "figure_interval_vs_rms.png"))
+```
+
+This plot is exploratory and uses participant-level summary measures. Motion values are normalized sensor measures, not calibrated physical acceleration or sound level.
+
+## Stage events
+
+```{r}
+kable(events, col.names = c("Time (seconds)", "Event"), caption = "Annotated stage events")
+```
+
+## Interpretation cautions
+
+- The data describe clapping by instrumented participants; the concert-hall audio also contains claps from non-participant audience members.
+- Signals are median-normalized, so their magnitude should not be read as absolute force or loudness.
+- Empty cells are missing observations, and the trimmed data intentionally blank periods outside each participant's detected clapping interval.
+- Participant-level summary distributions describe the instrumented participants only. They are not estimates of audience-wide behavior.
+- No inferential tests are included in this visual summary; the data notes do not document a sampling design or population-level model.

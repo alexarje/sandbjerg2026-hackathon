@@ -2,6 +2,7 @@
 
 - Super fast
 - It is easy to loose control because everything is going so fast
+- If participant locations or proximity data can be linked to the sensor IDs, investigate whether clapping synchrony decreases with distance. The current repository does not include that sensor-to-location mapping.
 
 ## Problems faced
 

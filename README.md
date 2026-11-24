@@ -25,6 +25,15 @@ All data are in [final_clapping_section](final_clapping_section/). The original 
 - [final_section_stats.csv](final_clapping_section/final_section_stats.csv): one row per participant, with clapping start and end times, duration, RMS measures, summary statistics, and median interclap interval.
 - [final_stage_events.csv](final_clapping_section/final_stage_events.csv): event times in seconds and labels for activity on stage.
 - [final_clapping.mp3](final_clapping_section/final_clapping.mp3): stereo audio from the concert hall, including claps from audience members who were not participants.
+- [analysis/](final_clapping_section/analysis/): reproducible R script, descriptive statistics, figures, and an HTML visual report for the clapping data.
+
+To regenerate the statistics and figures from the repository root, run:
+
+```sh
+Rscript final_clapping_section/analysis/visualize.R
+```
+
+The HTML report is [analysis/report.html](final_clapping_section/analysis/report.html). It is descriptive: participant-level sensor summaries should not be interpreted as audience-wide estimates or calibrated force/loudness.
 
 ## Timing and interpretation
 
